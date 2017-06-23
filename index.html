@@ -1,0 +1,169 @@
+
+<!-- saved from url=(0020)http://192.168.1.99/ -->
+<html class="gr__192_168_1_99"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Door</title>
+  <script>
+    //0.3.5
+    function pegasus(a,b,c){
+      return c=new XMLHttpRequest,
+      c.open("GET",a),
+      a=[],pegasus.timeout&&(c.timeout=pegasus.timeout),
+      c.ontimeout=function(a){b=a},
+      c.onreadystatechange=c.then=function(d,e,f,g)
+      {
+        if(d&&d.call&&(a=[,d,e]),b&&a[2]&&a[2](b,c),4==c.readyState&&(f=a[0|c.status/200]))
+          {
+            try{g=JSON.parse(c.responseText)}catch(a){g=null}f(g,c)
+          }
+        },c.send(),c
+    }
+  </script>
+  <script>
+   function stop_timer() {
+    // if(window.interval) clearInterval(interval)
+    pegasus('/INSTANT=OFF').then(
+      // success handler
+      function(data, xhr) {
+        // do something useful like
+        // $('#data').text(JSON.stringify(data));
+      },
+      // error handler (optional)
+      function(data, xhr) {
+        console.error(data, xhr.status)
+      }
+    )    
+   }
+   function start_timer() {
+    // interval=setInterval('counter()',50)
+    pegasus('/INSTANT=ON').then(
+      // success handler
+      function(data, xhr) {
+        // do something useful like
+        // $('#data').text(JSON.stringify(data));
+      },
+      // error handler (optional)
+      function(data, xhr) {
+        console.error(data, xhr.status)
+      }
+    )
+   }
+  </script>
+  <style type="text/css">
+   #layer1 {
+    background: #fc0;
+    padding: 30px 10px;
+    width: 200px;
+    max-width: 200px;
+    margin: auto;
+    font-size: 30;
+   }
+
+body { 
+  margin-top: 20px; 
+  margin-left: 10px;
+  margin-right: 10px; 
+  background: #242527; 
+  font-family: sans-serif;
+  color: #E8EAEA;
+  font-size: 1.3em;
+}
+a { 
+  color: #ffffff;
+  font-size: 1.3em;
+  font-weight: normal;
+}
+h2 { 
+  text-align: center; 
+  font-weight: normal;
+  margin-bottom: 60px; 
+  font-size: 1.3em; 
+}
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  width: 340px;
+  height: 140px;
+  line-height: 140px;
+  background: #25292C;
+  margin: 0px auto;
+  text-align: center;
+  border-radius: 999px;
+  color: rgba(155,155,155,1);
+  text-shadow: -1px -1px 0px rgba(255,255,255,0.8), 1px 1px 2px rgba(0,0,0,1);
+  font-size: 3em;
+  font-family: sans-serif;
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.3), 
+              inset 3px 15px 45px rgba(255,255,255,0.1),
+              inset -1px -1px 2px rgba(0,0,0,0.5), 
+              inset -3px -15px 45px rgba(0,0,0,0.2),
+              1px 5px 30px -4px rgba(0,0,0,1);
+  -webkit-transition: 0.1s ease-out;
+  -moz-transition:    0.1s ease-out;
+  -o-transition:      0.1s ease-out;
+  transition:         0.1s ease-out;
+}
+
+.btn:before {
+  content: "";
+  background: #1A1A1A;
+  width: 370px;
+  height: 170px;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  z-index: -1;
+  border-radius: 999px;
+  box-shadow: inset -1px -1px 2px rgba(255,255,255,0.3), 
+    inset -5px -15px 40px rgba(255,255,255,0.1),
+    inset 1px 1px 2px rgba(0,0,0,0.5), 
+    inset 5px 15px 40px rgba(0,0,0,0.2),
+    -2px -40px 50px -20px rgba(255,255,255,0.1),
+    2px 35px 50px -10px rgba(0,0,0,0.4),
+    0px 0px 25px 8px rgba(60,60,60,1);
+}
+
+.btn:active {
+  color: rgba(0,0,0,0.7);
+  text-shadow: 1px 1px 0px rgba(255,255,255,0.15);
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.3), 
+              inset 3px 15px 45px rgba(0,0,0,0.2),
+              inset -1px -1px 2px rgba(0,0,0,0.5), 
+              inset -3px -15px 45px rgba(255,255,255,0.1),
+              1px 5px 10px -4px rgba(0,0,0,1);
+}
+
+
+
+
+
+
+  </style>
+ </head>
+ <body onmouseup="stop_timer()" ontouchend="stop_timer()">
+   <br/>
+   <br/>
+   <div class="btn" onmousedown="start_timer()" ontouchstart="start_timer()" onmouseup="stop_timer()" ontouchend="stop_timer()">
+    Door
+   </div>
+   <center>
+    <div class="text">
+       <br/>
+       <p>&uarr; click and hold to open/close the door &uarr;</p>
+       <br/>
+       <br/>
+       <h2>&darr; Doesn't work? use links bellow &darr;</h2>
+
+  
+
+   
+   
+   
+   <a href="/DOOR=0.7">Delay .7 second</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="/DOOR=1">Delay 1 second</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="/DOOR=1.5">Delay 1.5 second</a>
+   </br></br>
+   <a href="/RESTART">Restart module</a>
+  </center>
+</body></html>

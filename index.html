@@ -1,24 +1,9 @@
 
-<!-- saved from url=(0020)http://192.168.1.99/ -->
-<html class="gr__192_168_1_99"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <title>Door</title>
-  <script>
-    //0.3.5
-    function pegasus(a,b,c){
-      return c=new XMLHttpRequest,
-      c.open("GET",a),
-      a=[],pegasus.timeout&&(c.timeout=pegasus.timeout),
-      c.ontimeout=function(a){b=a},
-      c.onreadystatechange=c.then=function(d,e,f,g)
-      {
-        if(d&&d.call&&(a=[,d,e]),b&&a[2]&&a[2](b,c),4==c.readyState&&(f=a[0|c.status/200]))
-          {
-            try{g=JSON.parse(c.responseText)}catch(a){g=null}f(g,c)
-          }
-        },c.send(),c
-    }
-  </script>
+ <script>    //0.3.5
+    function pegasus(a,b,c){return c=new XMLHttpRequest,c.open("GET",a),a=[],pegasus.timeout&&(c.timeout=pegasus.timeout),c.ontimeout=function(a){b=a},c.onreadystatechange=c.then=function(d,e,f,g){if(d&&d.call&&(a=[,d,e]),b&&a[2]&&a[2](b,c),4==c.readyState&&(f=a[0|c.status/200])){try{g=JSON.parse(c.responseText)}catch(a){g=null}f(g,c)}},c.send(),c}</script>
   <script>
    function stop_timer() {
     // if(window.interval) clearInterval(interval)

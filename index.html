@@ -52,6 +52,13 @@ body {
   font-family: sans-serif;
   color: #E8EAEA;
   font-size: 1.3em;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 a { 
   color: #ffffff;
@@ -129,7 +136,7 @@ h2 {
  <body onmouseup="stop_timer()" ontouchend="stop_timer()">
    <br/>
    <br/>
-   <div class="btn" onmousedown="start_timer()" ontouchstart="start_timer()" onmouseup="stop_timer()" ontouchend="stop_timer()">
+   <div class="btn" onmousedown="start_timer()" ontouchstart="start_timer()">
     Door
    </div>
    <center>
